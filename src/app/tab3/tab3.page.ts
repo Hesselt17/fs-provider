@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { listing } from '../models/listings.models';
+import { ListingService } from '../services/listing.service';
 
 @Component({
   selector: 'app-tab3',
@@ -8,15 +10,26 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab3Page {
 
-  constructor(
-    private navCtrl: NavController
-  ){}
+  public listings : Array<listing> = [];
 
-  ngOnInit() {
+  constructor(
+    private navCtrl: NavController,
+    private lstService: ListingService
+  ){
+
+    this.lstService.getAllListings();
+    this.listings = this.lstService.listings;
+
   }
 
-  updateR(){
-    this.navCtrl.navigateForward("/update")
+  updateR(lst : listing){
+    this.navCtrl.navigateForward("update", {
+      queryParams: {
+        q: "ionic",
+        address: lst.address,
+        lstID : lst.id
+      }
+    });
   }
 
 }

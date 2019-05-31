@@ -7,10 +7,34 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
-        {{testLst.address}}
-        <ion-item *ngFor="let lst of listing">
-            {{lst.address}}
-        </ion-item>
-    </ion-list>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+            align-items: stretch;
+        }
+        
+        .grid img {
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+            max-width: 100%;
+        }
+    </style>
+
+    <main class="grid">
+
+        <!-- (click)="navDetails(lst)"  -->
+        <button style="background-color:white" *ngFor="let lst of listings" slot="start">
+            <img src={{lst.image}}>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>{{lst.address}}</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    Relevant house info.
+                </ion-card-content>
+            </ion-card>
+        </button>
+    </main>
 </ion-content>

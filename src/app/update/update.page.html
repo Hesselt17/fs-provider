@@ -5,11 +5,19 @@
                 <ion-icon slot="icon-only" name="arrow-back">
                 </ion-icon>
             </ion-button>
-            <ion-title>Update Rentals</ion-title>
+            <ion-title>Update Rental</ion-title>
         </ion-item>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+    <ion-item-sliding>
+        <img src={{currentListing.image}} width="480px" height="270px" padding>
+        <ion-title *ngIf="currentListing">{{currentListing.address}}</ion-title>
+        <ion-card-content indent>Book House: {{currentListing.address}} b/c it is awesome.</ion-card-content>
+    </ion-item-sliding>
+    <ion-button>
+        Edit
+    </ion-button>
 
 </ion-content>
