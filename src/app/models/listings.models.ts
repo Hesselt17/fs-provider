@@ -1,30 +1,23 @@
 export class listing {
-    public address: string;
-    public image: string;
     public id : number;
+    public userID: number;
+    public address: string;
+    public name: string; 
+    public location: string;
+    public price: number;
+    public imageUrl: string;
+    public description :string; 
 
-    private stays: number;
+    //private stays: number;
 
     constructor() {
-        this.address = "";
-        this.image = "";
         this.id = 0;
-    }
-
-    public setAddress(address: string) {
-        this.address = address;
-    }
-
-    public setImage(image: string) {
-        this.image = image;
-    }
-
-    public setStays(stays: number) {
-        // Calculate the stays
-        this.stays = 20;
-    }
-
-    public getAge() {
-        return this.stays;
+        this.userID = 0;
+        this.address = "";
+        this.name = "";
+        this.location  = "";
+        this.price = null;
+        this.imageUrl = "";
+        this.description = "";
     }
 }

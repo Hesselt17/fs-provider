@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-item lines=none>
+          <ion-button (click)= "navToExisting()" fill=clear>
+              <ion-icon slot="icon-only" name="arrow-back">
+              </ion-icon>
+          </ion-button>
+          <ion-title *ngIf="property">{{property.address}}</ion-title>
+      </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-sliding>
+      <img src={{property.imageUrl}} width="480px" height="270px" padding>
+      <ion-card-content>Rental Name: {{property.name}} b/c it is awesome.</ion-card-content>
+      <ion-card-content>Rental Location: {{property.location}}</ion-card-content>
+      <ion-card-content>Rental Address: {{property.address}}</ion-card-content>
+      <ion-card-content>Rental Price: {{property.price}}</ion-card-content>
+      <ion-card-content>Rental Description: {{property.description}}</ion-card-content>
+  </ion-item-sliding>
+
+  <!-- [(ngModel)]= "currentUser.name"  -->
+
+</ion-content>

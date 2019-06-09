@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 import { listing } from '../models/listings.models';
+import { ListingService } from '../services/listing.service';
+
 
 
 @Component({
@@ -11,25 +13,37 @@ import { listing } from '../models/listings.models';
 })
 export class Tab1Page {
 
-  public listing: Array<listing> = new Array();
+  public listings: Array<listing> = [];
 
   constructor(
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private lstService: ListingService
   ) {
 
-    let lst1 = new listing();
-    lst1.address = "1600 Pennsylvania Ave.";
+    const listingCallback = (err, Plistings) => {
+      if (err) {
+        alert(err.error.message);
+        return;
+      }
+      console.log(Plistings);
+      this.listings = Plistings;
+    };
 
-    let lst2 = new listing();
-    lst2.address = "Reunion Tower";
-
-    this.listing.push(lst1);
-    this.listing.push(lst2);
+    this.lstService.getAllListings(listingCallback);
 
   }
 
-  navToTab1() {
-    this.navCtrl.navigateForward("main/tabs/tab1");
+  navDetails(lst : listing){
+    const propertyID = lst.id;
+    localStorage.setItem("property_id", String(propertyID));
+    this.navCtrl.navigateForward("details", {
+      queryParams: {
+        q: "ionic",
+        lstID : lst.id
+      }
+    });
   }
+  
+
 
 }

@@ -10,15 +10,24 @@
 
     <ion-list>
         <ion-item>
-            <ion-input placeholder="Enter Name" clearInput></ion-input>
+            <ion-input [(ngModel)]= "currLst.name" placeholder="Enter Property Name" clearInput></ion-input>
         </ion-item>
         <ion-item>
-            <ion-input placeholder="Enter Email" clearInput></ion-input>
+            <ion-input [(ngModel)]= "currLst.location" placeholder="Enter Location" clearInput></ion-input>
         </ion-item>
         <ion-item>
-            <ion-input placeholder="Enter Address" clearInput></ion-input>
+            <ion-input [(ngModel)]= "currLst.address" placeholder="Enter Address" clearInput></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input [(ngModel)]= "currLst.price" placeholder="Enter Price" clearInput></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input [(ngModel)]= "currLst.imageUrl" placeholder="Enter ImageUrl" clearInput></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input [(ngModel)]= "currLst.description" placeholder="Enter Description" clearInput></ion-input>
         </ion-item>
     </ion-list>
 
-    <ion-button>Create Rental</ion-button>
+    <ion-button (click)= "genLst()" >Create Rental</ion-button>
 </ion-content>

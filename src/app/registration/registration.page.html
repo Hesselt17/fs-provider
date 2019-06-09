@@ -8,17 +8,17 @@
 
     <ion-list>
         <ion-item>
-            <ion-input placeholder="Enter Name" clearInput></ion-input>
+            <ion-input [(ngModel)]= "currentUser.name" placeholder="Enter Name" clearInput></ion-input>
         </ion-item>
         <ion-item>
-            <ion-input placeholder="Enter Email" clearInput></ion-input>
+            <ion-input [(ngModel)]= "currentUser.email" placeholder="Enter Email" clearInput></ion-input>
         </ion-item>
         <ion-item>
-            <ion-input type="password" placeholder="Password Input"></ion-input>
+            <ion-input [(ngModel)]= "currentUser.password" placeholder="Password Input" clearInput></ion-input>
         </ion-item>
     </ion-list>
 
-    <ion-button padding (click)="register()">Register</ion-button>
-    <ion-button padding href="/login"> Already registered? - Sign In Here</ion-button>
+    <ion-button (click)="Register()" >Register</ion-button>
+    <ion-button (click)="navToLogin()"> Already registered? - Sign In Here</ion-button>
 
 </ion-content>

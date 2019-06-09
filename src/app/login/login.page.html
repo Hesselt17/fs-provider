@@ -1,17 +1,23 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Login</ion-title>
+        <ion-title>
+            Login
+        </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-list>
-        <ion-item>
-            <ion-input placeholder="Enter UserName" clearInput></ion-input>
+<!-- Here just expect the string and pass not the objects since registration dealt with them -->
+        <ion-item>  
+            <ion-input [(ngModel)]= "email" placeholder="Enter Email" clearInput></ion-input>
         </ion-item>
         <ion-item>
-            <ion-input type="password" placeholder="Password Input"></ion-input>
+            <ion-input [(ngModel)]= "password" type="password" placeholder="Password Input"></ion-input>
         </ion-item>
     </ion-list>
-    <ion-button padding (click)="login()">Login</ion-button>
+
+    <ion-button (click)= "Login()"> Login </ion-button>
+    <ion-button (click)= "navToReg()"> Need an Account? - Register Here </ion-button>
+
 </ion-content>

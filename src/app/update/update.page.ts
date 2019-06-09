@@ -21,7 +21,7 @@ export class UpdatePage implements OnInit {
     private navCtrl : NavController
   ) {
 
-    this.lstService.getAllListings();
+    //this.lstService.getAllListings();
     
   }
 
@@ -30,7 +30,7 @@ export class UpdatePage implements OnInit {
       this.address = data.params.address;
       this.lstID = data.params.lstID;
 
-    this.currentListing = this.lstService.findLstByID(this.lstID);
+    //this.currentListing = this.lstService.findLstByID(this.lstID);
     if (this.currentListing == null){
       alert("Listing Not Found!")
       this.navCtrl.navigateBack("tab1");

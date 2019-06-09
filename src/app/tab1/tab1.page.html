@@ -24,9 +24,8 @@
 
     <main class="grid">
 
-        <!-- (click)="navDetails(lst)"  -->
-        <button style="background-color:white" *ngFor="let lst of listings" slot="start">
-            <img src={{lst.image}}>
+        <button style="background-color:white" *ngFor="let lst of listings" (click)="navDetails(lst)" slot="start">
+            <img src={{lst.imageUrl}} width="480px" height="200px">
             <ion-card>
                 <ion-card-header>
                     <ion-card-title>{{lst.address}}</ion-card-title>

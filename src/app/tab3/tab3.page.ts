@@ -17,7 +17,7 @@ export class Tab3Page {
     private lstService: ListingService
   ){
 
-    this.lstService.getAllListings();
+    //this.lstService.getAllListings();
     this.listings = this.lstService.listings;
 
   }
