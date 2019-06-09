@@ -72,7 +72,15 @@ export class DetailsPage implements OnInit {
 
   }
 
+  navToEditRental(){
+    this.navCtrl.navigateBack("tabs/tab1");
+  }
+
   navToExisting(){
+    this.navCtrl.navigateBack("tabs/tab1");
+  }
+
+  navToBookingReq(){
     this.navCtrl.navigateBack("tabs/tab1");
   }
 
